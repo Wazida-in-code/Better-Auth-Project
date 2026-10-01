@@ -60,10 +60,13 @@ export default function Navbar() {
           </div>
         </div>
         <ul className="hidden items-center gap-4 md:flex">
-          <li>
+          {
+            session?.user && <li>
             <Link href="/profile">Profile</Link>
           </li>
-          <li>
+          }
+          {
+            session?.user && <li>
             <Link
               href="#"
               className="font-medium text-accent"
@@ -72,6 +75,7 @@ export default function Navbar() {
               Dashboard
             </Link>
           </li>
+          }
           <li>
             <Link href="#">Pricing</Link>
           </li>
