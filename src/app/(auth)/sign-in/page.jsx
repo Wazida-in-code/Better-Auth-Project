@@ -28,6 +28,12 @@ const SignInPage = () => {
     console.log(signInData);
   };
 
+  const login = async () => {
+    const data = await signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="flex justify-center">
       <h2>Please Sign In</h2>
@@ -79,6 +85,7 @@ const SignInPage = () => {
             Reset
           </Button>
         </div>
+        <Button onClick={login}>Google Sign IN</Button>
       </Form>
     </div>
   );
