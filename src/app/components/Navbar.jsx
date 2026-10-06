@@ -5,7 +5,7 @@ import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 // import baseUrl from "./services/baseUrl";
 
-export default function Navbar() {
+export default function Navbar({categories}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session } = useSession();
   const router = useRouter()
@@ -27,7 +27,7 @@ export default function Navbar() {
   //   .then(data => setCategories(data))
   //   .catch(err => console.log(err))
   // }, []) 
-  // console.log(categories);
+  console.log(categories);
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -86,9 +86,9 @@ export default function Navbar() {
             </Link>
           </li>
           }
-          <li>
-            <Link href="#">Pricing</Link>
-          </li>
+          {
+            categories?.map(cat => <li key={cat?._id}><Link href={`/category/${cat?.slug}`}>{cat?.name}</Link></li>)
+          }
         </ul>
         <div className="hidden items-center gap-4 md:flex">
           {session?.user ? (
