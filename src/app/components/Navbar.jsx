@@ -64,7 +64,7 @@ export default function Navbar({categories}) {
             </svg>
           </button>
           <div className="flex items-center gap-3">
-            <Link href="/" className="font-bold">
+            <Link href="/" className="font-bold text-black">
               HOME
             </Link>
           </div>
@@ -87,7 +87,7 @@ export default function Navbar({categories}) {
           </li>
           }
           {
-            categories?.map(cat => <li key={cat?._id}><Link href={`/category/${cat?.slug}`}>{cat?.name}</Link></li>)
+            categories?.map(cat => <li key={cat?._id}><Link className="text-black" href={`/category/${cat?.slug}`}>{cat?.name}</Link></li>)
           }
         </ul>
         <div className="hidden items-center gap-4 md:flex">
