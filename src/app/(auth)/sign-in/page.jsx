@@ -9,6 +9,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 
 const SignInPage = () => {
   const onSubmit = async (e) => {
@@ -86,6 +87,8 @@ const SignInPage = () => {
           </Button>
         </div>
         <Button onClick={login}>Google Sign IN</Button>
+        <p>Forgot Password?</p>
+        <Link href="/forgot-password" className="text-blue-600 underline">Click here</Link>
       </Form>
     </div>
   );
