@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { Link, Button } from "@heroui/react";
 import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
-import baseUrl from "./services/baseUrl";
+// import baseUrl from "./services/baseUrl";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session } = useSession();
   const router = useRouter()
-  const [categories, setCategories] = useState([])
+  // const [categories, setCategories] = useState([])
 
   const handleSignOut = async () => {
     await signOut({
@@ -21,13 +21,13 @@ export default function Navbar() {
     });
   };
 
-  useEffect(() => {
-    fetch(`${baseUrl}/api/categories`)
-    .then(res => res.json())
-    .then(data => setCategories(data))
-    .catch(err => console.log(err))
-  }, []) 
-  console.log(categories);
+  // useEffect(() => {
+  //   fetch(`${baseUrl}/api/categories`)
+  //   .then(res => res.json())
+  //   .then(data => setCategories(data))
+  //   .catch(err => console.log(err))
+  // }, []) 
+  // console.log(categories);
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
