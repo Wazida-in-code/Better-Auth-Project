@@ -27,7 +27,7 @@ const CategoryProduct = async ({params}) => {
             {/* bread crumbs */}
             <div className="flex gap-1 text-black">
                 <Link className="text-blue-500" href={"/"}>Home</Link>
-                <span>→</span>
+                <span>⮞</span>
                 <p>{categorySlug}</p>
             </div>
 
