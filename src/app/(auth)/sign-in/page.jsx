@@ -87,7 +87,7 @@ const SignInPage = () => {
           </Button>
         </div>
         <Button onClick={login}>Google Sign IN</Button>
-        <p>Forgot Password?</p>
+        <p>Forgot Password? ↓</p>
         <Link href="/forgot-password" className="text-blue-600 underline">Click here</Link>
       </Form>
     </div>
